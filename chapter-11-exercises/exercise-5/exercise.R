@@ -22,10 +22,22 @@ library("dplyr")
 # To which destinations were the average arrival delays the highest?
 # Hint: you'll have to perform a grouping operation then summarize your data
 # You can use the `head()` function to view just the first few rows
-
+flights %>% 
+  group_by(dest) %>% 
+  summarize(
+    avg_arr_delay = mean(arr_dalay, na.rm = TRUE)
+  ) %>% 
+  filter(avg_arr_delay == max(avg_arr_delay))
 
 # You can look up these airports in the `airports` data frame!
-
+airports %>% 
+  filter(faa = "CAE")
 
 # Which city was flown to with the highest average speed?
+flights %>% 
+  group_by(dest) %>% 
+  summarize(
+    avg_speed = mean(distance/air_time)  
+  )
+  
 
