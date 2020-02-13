@@ -1,0 +1,35 @@
+---
+title: "R Markdown"
+author: "Lin"
+date: "2020/2/11"
+output: html_document
+---
+
+##LINJIAMING 
+
+I like myself
+
+```{r example, echo = FALSE, include = FALSE}
+numbers <- runif(1:100)
+hist(numbers)
+numbers_mean <- mean(numbers)  # save the mean
+
+img_url <- "https://cdn.aarp.net/content/dam/aarp/money/scams_fraud/2019/12/1140-puppy-sad.jpg"
+
+img_mark <- paste0("![dog](",img_url,")")
+```
+
+The mean of the number happens to be **`r numbers_mean`**
+
+`r img_mark`
+
+```{r code_chunk}
+print(numbers)
+```
+
+
+
+```{r other}
+msg <- "**Hello WORLD**"
+```
+
